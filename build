@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker exec -it tinycache-dev bash -c "cd src && go build"
