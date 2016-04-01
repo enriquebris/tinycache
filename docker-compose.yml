@@ -1,0 +1,7 @@
+version: '2'
+services:
+  golangdev:
+    container_name: tinycache-dev
+    build: .
+    volumes:
+      - ./src/:/go/src/
