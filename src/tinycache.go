@@ -9,6 +9,6 @@ type Cache interface {
 }
 
 type Limit struct {
-	TotalElements int
+	Capacity int
 	SizeInBytes   int
 }

@@ -168,7 +168,7 @@ func (lc *LRUCache) addSizeInBytes(size int) {
 
 // Adds elements to *LRUCache.current.TotalElements
 func (lc *LRUCache) addElements(n int) {
-	lc.current.TotalElements = lc.current.TotalElements + n
+	lc.current.Capacity = lc.current.Capacity + n
 }
 
 // Remove the Least Recently Used element (the last onto lc.clist)
@@ -208,7 +208,7 @@ func (lc *LRUCache) cleanBySize(plusSize int) {
 
 // Removes the needed Least Recently Used elements in order to not have more elements than the limit (lc.limit.TotalElements)
 func (lc *LRUCache) cleanByTotalElements(plusElements int) {
-	for lc.current.TotalElements+plusElements > lc.limit.TotalElements {
+	for lc.current.Capacity+plusElements > lc.limit.Capacity {
 		if !lc.removeLast() {
 			// break the loop if there is not any last element to remove
 			break
